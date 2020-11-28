@@ -1,19 +1,19 @@
 // Faremos as requisações em uma API externa, cujo endpoint já está listado abaixo.
-const API_URL = "https://api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72";
+const API_URL = "https://api.sheety.co/35ba876740eecd0e1f27e8ffd2ae5a3a/gamaBnb/data";
 
+// Para isso, usaremos o "fetch", conforme você deve ter visto nas aulas online.
+// Corrija a linha abaixo, para que a requisição funcione.
 // Para isso, usaremos o "fetch", conforme você deve ter visto nas aulas online.
 fetch(API_URL)
   .then(response => response.text())
   .then(result => {
     // Aqui, estamos pegando o resultado da requisição e parseando em JSON, para que fique mais fácil
     // e amigável, tratarmos esses dados.
-    const data = JSON.parse(result);
 
-    console.log(data)
-
+    const { data } = JSON.parse(result);
+  
     // Como é mesmo que percorremos um array? 'hm
     data.forEach(element => {
-      
       // Pegue a linha do container onde serão exibidos os cards.
       row = document.getElementById("row");
 
@@ -30,7 +30,7 @@ fetch(API_URL)
       // Não se esqueça que sua imagem precisa ser referenciada!
       image = document.createElement("img");
       image.className = "card-img-top";
-      image.src = element.photo;
+      image.src = element.image;
 
       // Legal! Agora, já podemos começar a construir o "corpo" do card. Bora lá!
       // Obs.: atribua a class "card-body" do Bootstrap, para que fique bonitão. :)
@@ -48,7 +48,7 @@ fetch(API_URL)
       // Use o primeiro exemplo como guia. ;)
       propertyType = document.createElement("p");
       propertyType.className = "property-type";
-      propertyType.innerHTML = element.property_type;
+      propertyType.innerHTML = element.type;
 
       propertyName = document.createElement("p");
       propertyName.className = "property-name";
@@ -62,7 +62,7 @@ fetch(API_URL)
       // anexar um ao outro para exibição ao usuário. Para "anexar" os elementos, nós usaremos
       // o método "appendChild". Se liga na estrutura do componente, para que tudo seja exibido
       // corretamente:
-      //
+      
       // row
       //   div
       //     card
