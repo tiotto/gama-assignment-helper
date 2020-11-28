@@ -9,6 +9,8 @@ fetch(API_URL)
     // e amigável, tratarmos esses dados.
     const data = JSON.parse(result);
 
+    console.log(data)
+
     // Como é mesmo que percorremos um array? 'hm
     data.forEach(element => {
       
