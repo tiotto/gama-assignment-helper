@@ -20,8 +20,8 @@ Onde, os dados dos cards deverão ser exibidos através de uma requisição em A
 
 ## Passo-a-passo
 
-1. Faça o fork desse repositório;
-2. Clone o seu repositório para seu ambiente local;
+1. Faça o fork desse repositório; // ok
+2. Clone o seu repositório para seu ambiente local; // ok
 3. Acesse a pasta do seu projeto e execute `npm install`;
 4. Bora pro desafio!
 
